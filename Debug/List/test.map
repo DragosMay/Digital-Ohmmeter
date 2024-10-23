@@ -1,0 +1,53 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+twi_tx_index                                                                      0x0200       1
+twi_rx_index                                                                      0x0201       1
+twi_result                                                                        0x0202       1
+slave_address (twi.lib)                                                           0x0203       1
+twi_tx_buffer (twi.lib)                                                           0x0204       2
+bytes_to_tx (twi.lib)                                                             0x0206       1
+twi_rx_buffer (twi.lib)                                                           0x0207       2
+bytes_to_rx (twi.lib)                                                             0x0209       1
+twi_rx_buffer_size (twi.lib)                                                      0x020A       1
+twi_slave_rx_handler (twi.lib)                                                    0x020B       2
+twi_slave_tx_handler (twi.lib)                                                    0x020D       2
+_base_y (alcd_twi.lib)                                                            0x020F       4
+_pcf8574_addr (alcd_twi.lib)                                                      0x0213       1
+bus_data (alcd_twi.lib)                                                           0x0214       1
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+twi_flag                                                                          GPIOR0.0  1bit
+twi_ready                                                                         GPIOR0.1  1bit
+_lcd_x                                                                            R4           1
+_lcd_y                                                                            R3           1
+_lcd_maxx                                                                         R6           1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+main                                                                              0x00087     48
+twi_master_init                                                                   0x000B7     43
+twi_master_trans                                                                  0x000E2    102
+twi_int_handler                                                                   0x00148    387
+_lcd_setbit_G101                                                                  0x002CB      5
+_lcd_clrbit_G101                                                                  0x002D0      7
+_lcd_write_nibble_hi_G101                                                         0x002D7     17
+_lcd_write_data                                                                   0x002E8     13
+lcd_gotoxy                                                                        0x002F5     12
+lcd_clear                                                                         0x00301     10
+lcd_putchar                                                                       0x0030B     21
+lcd_backlight                                                                     0x00320     11
+lcd_twi_init                                                                      0x0032B     42
+strlen                                                                            0x00355     12
+strlenf                                                                           0x00361     13
+pcf8574_write                                                                     0x0036E     17
+_print_G104                                                                       0x0037F    296
+put_lcd_G104                                                                      0x004A7     14
+lcd_printfxy                                                                      0x004B5     46

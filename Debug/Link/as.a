@@ -1,0 +1,79 @@
+;void main(void)
+; 0000 0044 {
+
+	.CSEG
+;PCODE: $00000000 VOL: 0
+; 0000 0045 int n=0;
+; 0000 0046 
+; 0000 0047 /* initialize the TWI master to use a SCL bit rate of 100kHz */
+; 0000 0048 twi_master_init(100);
+;	n -> R16,R17
+;PCODE: $00000001 VOL: 0
+;PCODE: $00000002 VOL: 0
+;PCODE: $00000003 VOL: 0
+;PCODE: $00000004 VOL: 0
+;PCODE: $00000005 VOL: 0
+; 0000 0049 
+; 0000 004A /* enable interrupts to start TWI communication */
+; 0000 004B #asm("sei")
+;PCODE: $00000006 VOL: 0
+; 0000 004C 
+; 0000 004D /* initialize the LCD for 2 lines & 16 columns */
+; 0000 004E lcd_twi_init(PCF8574_I2C_ADDRESS,16);
+;PCODE: $00000007 VOL: 0
+;PCODE: $00000008 VOL: 0
+;PCODE: $00000009 VOL: 0
+;PCODE: $0000000A VOL: 0
+; 0000 004F 
+; 0000 0050 /* display the message on the second LCD line */
+; 0000 0051 lcd_printfxy(0,1,"Hello world");
+;PCODE: $0000000B VOL: 0
+;PCODE: $0000000C VOL: 0
+;PCODE: $0000000D VOL: 0
+;PCODE: $0000000E VOL: 0
+;PCODE: $0000000F VOL: 0
+;PCODE: $00000010 VOL: 0
+;PCODE: $00000011 VOL: 0
+;PCODE: $00000012 VOL: 0
+;PCODE: $00000013 VOL: 0
+;PCODE: $00000014 VOL: 0
+;PCODE: $00000015 VOL: 0
+; 0000 0052 
+; 0000 0053 while (1)
+;PCODE: $00000016 VOL: 0
+; 0000 0054 {
+; 0000 0055 /* print the counter variable */
+; 0000 0056 lcd_printfxy(0,0,"%u",n);
+;PCODE: $00000017 VOL: 0
+;PCODE: $00000018 VOL: 0
+;PCODE: $00000019 VOL: 0
+;PCODE: $0000001A VOL: 0
+;PCODE: $0000001B VOL: 0
+;PCODE: $0000001C VOL: 0
+;PCODE: $0000001D VOL: 0
+;PCODE: $0000001E VOL: 0
+;PCODE: $0000001F VOL: 0
+;PCODE: $00000020 VOL: 0
+;PCODE: $00000021 VOL: 0
+;PCODE: $00000022 VOL: 0
+;PCODE: $00000023 VOL: 0
+;PCODE: $00000024 VOL: 0
+; 0000 0057 /* flash the backlight */
+; 0000 0058 lcd_backlight(n++ & 1);
+;PCODE: $00000025 VOL: 0
+;PCODE: $00000026 VOL: 0
+;PCODE: $00000027 VOL: 0
+;PCODE: $00000028 VOL: 0
+;PCODE: $00000029 VOL: 0
+;PCODE: $0000002A VOL: 0
+; 0000 0059 /* 500ms delay */
+; 0000 005A delay_ms(500);
+;PCODE: $0000002B VOL: 0
+;PCODE: $0000002C VOL: 0
+; 0000 005B }
+;PCODE: $0000002D VOL: 0
+;PCODE: $0000002E VOL: 0
+; 0000 005C }
+;PCODE: $0000002F VOL: 0
+;PCODE: $00000030 VOL: 0
+;PCODE: $00000031 VOL: 0
